@@ -1,0 +1,29 @@
+{
+  "name": "connectura",
+  "version": "0.1.0",
+  "private": false,
+  "scripts": {
+    "build-client": "cd client && npm run build",
+    "install-client": "cd client && npm install",
+    "heroku-postbuild": "npm install && npm run install-client && npm run build-client",
+    "server": "nodemon server --ignore client",
+    "client": "npm run dev --prefix client",
+    "start": "concurrently  --kill-others-on-fail \"npm run server\" \"npm run client\""
+  },
+  "dependencies": {
+    "bcrypt": "5.1.0",
+    "bcryptjs": "^2.4.3",
+    "concurrently": "^8.2.1",
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "jsonwebtoken": "9.0.0",
+    "mongoose": "7.3.1",
+    "nodemailer": "^6.9.3",
+    "nodemailer-sendgrid-transport": "^0.2.0",
+    "nodemon": "^3.0.1",
+    "socket.io": "^4.7.1",
+    "uuid": "^9.0.0",
+    "validator": "^13.9.0"
+  }
+}
